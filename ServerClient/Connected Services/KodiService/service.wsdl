@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="KodiService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IKodiService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IKodiService_GetName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetName" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_GetName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_SetName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetName" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_SetName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_GetSongs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSongs" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_GetSongs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSongsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_PlaySong_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlaySong" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_PlaySong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlaySongResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_GetPictures_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPictures" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_GetPictures_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPicturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_GetMovies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMovies" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_GetMovies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMoviesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_PlayMovie_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayMovie" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_PlayMovie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_GetPlaylists_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlaylists" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_GetPlaylists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlaylistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_PlayPause_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayPause" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_PlayPause_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayPauseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_PlayPlaylist_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayPlaylist" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_PlayPlaylist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayPlaylistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_PlayPicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayPicture" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_PlayPicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayPictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_ChangeVolume_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeVolume" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_ChangeVolume_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeVolumeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IKodiService">
+    <wsdl:operation name="GetName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/GetName" message="tns:IKodiService_GetName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/GetNameResponse" message="tns:IKodiService_GetName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/SetName" message="tns:IKodiService_SetName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/SetNameResponse" message="tns:IKodiService_SetName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSongs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/GetSongs" message="tns:IKodiService_GetSongs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/GetSongsResponse" message="tns:IKodiService_GetSongs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlaySong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/PlaySong" message="tns:IKodiService_PlaySong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/PlaySongResponse" message="tns:IKodiService_PlaySong_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPictures">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/GetPictures" message="tns:IKodiService_GetPictures_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/GetPicturesResponse" message="tns:IKodiService_GetPictures_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMovies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/GetMovies" message="tns:IKodiService_GetMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/GetMoviesResponse" message="tns:IKodiService_GetMovies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayMovie">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/PlayMovie" message="tns:IKodiService_PlayMovie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/PlayMovieResponse" message="tns:IKodiService_PlayMovie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlaylists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/GetPlaylists" message="tns:IKodiService_GetPlaylists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/GetPlaylistsResponse" message="tns:IKodiService_GetPlaylists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayPause">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/PlayPause" message="tns:IKodiService_PlayPause_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/PlayPauseResponse" message="tns:IKodiService_PlayPause_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayPlaylist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/PlayPlaylist" message="tns:IKodiService_PlayPlaylist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/PlayPlaylistResponse" message="tns:IKodiService_PlayPlaylist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayPicture">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/PlayPicture" message="tns:IKodiService_PlayPicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/PlayPictureResponse" message="tns:IKodiService_PlayPicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeVolume">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/ChangeVolume" message="tns:IKodiService_ChangeVolume_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/ChangeVolumeResponse" message="tns:IKodiService_ChangeVolume_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IKodiService" type="tns:IKodiService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IKodiService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetName">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/GetName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetName">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/SetName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSongs">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/GetSongs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlaySong">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/PlaySong" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPictures">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/GetPictures" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMovies">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/GetMovies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayMovie">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/PlayMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlaylists">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/GetPlaylists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayPause">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/PlayPause" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayPlaylist">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/PlayPlaylist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayPicture">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/PlayPicture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeVolume">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/ChangeVolume" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KodiService">
+    <wsdl:port name="NetTcpBinding_IKodiService" binding="tns:NetTcpBinding_IKodiService">
+      <soap12:address location="net.tcp://localhost:9092/KodiService/" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9092/KodiService/</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
