@@ -21,13 +21,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="net.tcp://localhost:9092/KodiService/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="net.tcp://localhost:9092/KodiService/mex/mex/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="96777bdd-d313-4d38-b9b3-ec44daa2babf" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ed995569-36b2-41c2-be66-7b6080277c45" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="e073768b-9c68-4bcc-a169-86759c3fcfcc" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="f7bca36e-a2ee-4af1-9165-69c00b0726f2" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="a0964fbd-af0a-464d-b1ca-f432bdc20aec" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex/mex/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="979b5cea-a1a0-40c7-89f1-89892bb0b812" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex/mex/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="dbadb159-b738-4d08-87d4-97689f2b2810" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex/mex/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="8520b08d-8d15-423f-afb1-4184538c9d77" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex/mex/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

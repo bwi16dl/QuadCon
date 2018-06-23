@@ -47,5 +47,11 @@ namespace Controller.Services
 
         [OperationContract]
         void ChangeVolume(string sourceName, int volume);
+
+        [OperationContract]
+        void SetUrl(string sourceName, string url);
+
+        [OperationContract]
+        void AChangeVolume(string sourceName, int volume);
     }
 }

@@ -28,7 +28,11 @@
                 <DataGridTextColumn Binding="{Binding Value}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Play Song" HorizontalAlignment="Left" Margin="56,12,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PlaySong}" Height="20" />
+        <Button Content="Play Song" HorizontalAlignment="Left" Margin="56,12,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PlaySong}" Height="20" Background="#E5DDDDDC" >
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.6" Direction="313"/>
+            </Button.Effect>
+        </Button>
 
         <DataGrid Grid.Row="1" Grid.Column="1" AutoGenerateColumns="False" ItemsSource="{Binding Videos}" SelectedItem="{Binding SelectedVideo, Mode=TwoWay}" Height="365" VerticalAlignment="Top" >
             <DataGrid.Columns>
@@ -61,6 +65,8 @@
         <Slider Minimum="0" Maximum="100" HorizontalAlignment="Left" Margin="120,15,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="200" Value="{Binding Volume}" />
         <Label Content="Volume: " HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="65" Foreground="Black"/>
         <Label Content="{Binding Volume}" HorizontalAlignment="Left" Margin="66,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="37" Foreground="Black"/>
+        <Label Content="Kodi URL: " HorizontalAlignment="Left" Margin="135,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="65" Foreground="Black" Grid.Column="1"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="18" Margin="0,15,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding KodiUrl}" VerticalAlignment="Top" Width="190" BorderBrush="{x:Null}" Background="#7FFFFFFF" FontSize="10"/>
 
 
 

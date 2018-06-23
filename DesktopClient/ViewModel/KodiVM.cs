@@ -10,6 +10,17 @@ namespace DesktopClient.ViewModel
     
     public class KodiVM : ViewModelBase
     {
+        private string kodiUrl;
+
+        public string KodiUrl
+        {
+            get { return kodiUrl; }
+            set {
+                kodiUrl = value; RaisePropertyChanged("KodiUrl");
+                client.SetUrl(Name,kodiUrl);
+            }
+        }
+
         private KodiServiceClient client = new KodiServiceClient();
 
         private string name;
@@ -162,6 +173,7 @@ namespace DesktopClient.ViewModel
         public KodiVM()
         {
             Name = "Kodi Source 01";
+            KodiUrl = @"http://192.168.0.192:8080";
             Songs = client.GetSongs(Name);
             Videos = client.GetMovies(Name);
             Photos = client.GetPictures(Name);

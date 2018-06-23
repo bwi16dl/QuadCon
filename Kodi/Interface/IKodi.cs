@@ -30,5 +30,7 @@ namespace Kodi
         void PlayPause();
 
         void ChangeVolume(int volume);
+
+        void SetUrl(string url);
     }
 }

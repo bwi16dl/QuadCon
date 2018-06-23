@@ -19,7 +19,7 @@ namespace Kodi
         }
 
         #region FIELDS
-        private string url= @"http://localhost:8080";
+        private string url = @"http://localhost:8080";
         private string name;
         private IDictionary<int, string> songs;
         #endregion
@@ -32,16 +32,20 @@ namespace Kodi
 
         public IDictionary<int, string> GetSongs()
         {
-            if (!Ping()) { return null;  }
+            if (!Ping()) { return null; }
 
             string html = HttpGet(url + "/jsonrpc?request={%22jsonrpc%22:%222.0%22,%22id%22:1,%22method%22:%22AudioLibrary.GetSongs%22,%22params%22:{}}");
             dynamic json = System.Web.Helpers.Json.Decode(@html);
-            IDictionary<int, string> results = new Dictionary<int, string>();
-            for (int i = 0; i < json.result.songs.Length; i++)
+            try
             {
-                results.Add(json.result.songs[i].songid, json.result.songs[i].label);
+                IDictionary<int, string> results = new Dictionary<int, string>();
+                for (int i = 0; i < json.result.songs.Length; i++)
+                {
+                    results.Add(json.result.songs[i].songid, json.result.songs[i].label);
+                }
+                return results;
             }
-            return results;
+            catch (Exception e) { return null; }
         }
         public IDictionary<string, string> GetPictures()
         {
@@ -52,11 +56,11 @@ namespace Kodi
 
             void subdirCheck(string dir, ref IDictionary<string, string> results2)
             {
-                string html2 = HttpGet(url + "/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"Files.GetDirectory\",\"params\":{\"directory\":\"" + dir.Replace("\\","/") + "\",\"media\":\"pictures\"}}").Replace("\\\\\\","\\");
+                string html2 = HttpGet(url + "/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"Files.GetDirectory\",\"params\":{\"directory\":\"" + dir.Replace("\\", "/") + "\",\"media\":\"pictures\"}}").Replace("\\\\\\", "\\");
                 // /jsonrpc?request={"jsonrpc":"2.0","id":1,"method":"Files.GetDirectory","params":{"directory":"D://Pictures//Camera","media":"pictures"}}
                 dynamic json2 = System.Web.Helpers.Json.Decode(@html2);
                 if (json2.result.files == null) { return; }
-                for (int i = 0; i < json2.result.files.Length ; i++)
+                for (int i = 0; i < json2.result.files.Length; i++)
                 {
                     if (((string)(json2.result.files[i].file)).EndsWith("\\"))
                     {
@@ -71,32 +75,37 @@ namespace Kodi
                             {
                                 results2.Add(json2.result.files[i].file, json2.result.files[i].label);
                             }
-                            catch (Exception)
+                            catch (Exception e)
                             {
 
                             }
                         }
-                        
-                        
+
+
                     }
                 }
-             }
+            }
             dynamic json = System.Web.Helpers.Json.Decode(@html);
             IDictionary<string, string> results = new Dictionary<string, string>();
-            for (int i = 0; i < json.result.sources.Length; i++)
+            try
             {
-                string tmp = (string)(json.result.sources[i].file);
-                if (tmp.EndsWith("\\"))
+                for (int i = 0; i < json.result.sources.Length; i++)
                 {
-                    subdirCheck(json.result.sources[i].file,ref results);
-                } else if (!"Picture add-ons".Equals(json.result.sources[i].label))
-                {
+                    string tmp = (string)(json.result.sources[i].file);
+                    if (tmp.EndsWith("\\"))
+                    {
+                        subdirCheck(json.result.sources[i].file, ref results);
+                    }
+                    else if (!"Picture add-ons".Equals(json.result.sources[i].label))
+                    {
 
-                    results.Add(json.result.sources[i].file, json.result.sources[i].label);
+                        results.Add(json.result.sources[i].file, json.result.sources[i].label);
+                    }
+
                 }
-                
+                return results;
             }
-            return results;
+            catch (Exception e) { return null; }
 
         }
         public IDictionary<int, string> GetMovies()
@@ -107,12 +116,18 @@ namespace Kodi
             dynamic json = System.Web.Helpers.Json.Decode(@html);
             //Console.Write(json.result);
             //Console.ReadLine();
-            IDictionary<int, string> results = new Dictionary<int, string>();
-            for (int i = 0; i < json.result.movies.Length; i++)
+            try
             {
-                results.Add(json.result.movies[i].movieid, json.result.movies[i].label);
+                IDictionary<int, string> results = new Dictionary<int, string>();
+                for (int i = 0; i < json.result.movies.Length; i++)
+                {
+                    results.Add(json.result.movies[i].movieid, json.result.movies[i].label);
+                }
+                return results;
             }
-            return results;
+            catch (Exception e) { return null; }
+
+
 
         }
 
@@ -122,13 +137,17 @@ namespace Kodi
 
             string html = HttpGet(url + "/jsonrpc?request={\"jsonrpc\":\"2.0\",\"method\":\"Files.GetDirectory\",\"id\":\"1527438395460\",\"params\":{\"directory\":\"special://profile/playlists/music\",\"media\":\"music\",\"properties\":[\"title\",\"file\",\"mimetype\",\"thumbnail\",\"dateadded\"],\"sort\":{\"method\":\"none\",\"order\":\"ascending\"}}}");
             dynamic json = System.Web.Helpers.Json.Decode(@html);
-            IDictionary<string, string> results = new Dictionary<string, string>();
-            for (int i = 0; i < json.result.files.Length; i++)
-            {
-                results.Add(json.result.files[i].file, json.result.files[i].label);
-            }
-            return results;
 
+            IDictionary<string, string> results = new Dictionary<string, string>();
+            try
+            {
+                for (int i = 0; i < json.result.files.Length; i++)
+                {
+                    results.Add(json.result.files[i].file, json.result.files[i].label);
+                }
+                return results;
+            }
+            catch (Exception e) { return null; }
         }
 
         #endregion
@@ -137,13 +156,17 @@ namespace Kodi
         public void SetName(string name)
         {
             this.name = name;
-        //    Console.WriteLine("\n\t=> Name set: " + name);
+            Console.WriteLine("\n\t=> Name set: " + name);
             songs = GetSongs();
-        //    Console.WriteLine("\n\t=> Songs: " + name);
+            Console.WriteLine("\n\t=> Songs: " + name);
 
         }
         #endregion
 
+        public void SetUrl(string url)
+        {
+            this.url = url;
+        }
         public void PlaySong(int songId)
         {
             if (!Ping()) { return; }
@@ -154,7 +177,7 @@ namespace Kodi
 
         public void PlayMovie(int movieId)
         {
-            if (!Ping()) { return ; }
+            if (!Ping()) { return; }
             HttpGet(url + "/jsonrpc?request={%22jsonrpc%22:%222.0%22,%22id%22:%221%22,%22method%22:%22Player.Stop%22,%22params%22:{%22playerid%22:2}}");
 
             // http://localhost:8080/jsonrpc?request={%22jsonrpc%22:%222.0%22,%22id%22:%221%22,%22method%22:%22Player.Stop%22,%22params%22:{%22playerid%22:2}}
@@ -173,14 +196,14 @@ namespace Kodi
         public void ChangeVolume(int volume)
         {
             if (!Ping()) { return; }
-            HttpGet(url + "/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"Application.SetVolume\",\"params\":{\"volume\":"+ volume +"}}");
+            HttpGet(url + "/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"Application.SetVolume\",\"params\":{\"volume\":" + volume + "}}");
             ///jsonrpc?request={"jsonrpc":"2.0","id":1,"method":"Application.SetVolume","params":{"volume":100}}
         }
         public void PlayPicture(string pictureId)
         {
-            if (!Ping()) { return ; }
+            if (!Ping()) { return; }
 
-            HttpGet(url + "/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"" + pictureId.Replace("\\","/") + "\"}}}");
+            HttpGet(url + "/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"" + pictureId.Replace("\\", "/") + "\"}}}");
             //{"jsonrpc":"2.0","id":"1","method":"Player.Open","params":{"item":{"file":"D:\Pictures\Wallapapers\anton-fadeev-image.jpg"}}}
         }
 
@@ -191,11 +214,12 @@ namespace Kodi
                 string pingResult = HttpGet(url + "/jsonrpc?request={\"jsonrpc\":\"2.0\",\"method\":\"JSONRPC.Ping\",\"params\":[],\"id\":1}");
                 if (pingResult.Equals("") || pingResult == null) { return false; }
                 return true;
-            } catch (Exception)
+            }
+            catch (Exception e)
             {
             }
             return false;
-            
+
         }
 
         public void PlayPlaylist(string playlistId)
@@ -213,21 +237,21 @@ namespace Kodi
         */
         private static string HttpGet(string url)
         {
-            string html="";
+            string html = "";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.AutomaticDecompression = DecompressionMethods.GZip;
-            request.Timeout=100;
+            request.Timeout = 4000;
             try
             {
                 using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 using (Stream stream = response.GetResponseStream())
                 using (StreamReader reader = new StreamReader(stream))
                 {
-               
-                        html = reader.ReadToEnd();
-               
-                
-                
+
+                    html = reader.ReadToEnd();
+
+
+
                 }
             }
             catch (WebException e)
