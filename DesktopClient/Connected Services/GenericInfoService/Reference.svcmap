@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0889bcd2-ba09-47f7-a46a-676cf5ffe362" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c66c26cc-c75f-43ea-9d40-c49de803a42f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -21,13 +21,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="net.tcp://localhost:9091/GenericInfoService/mex/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="net.tcp://wi-gate.technikum-wien.at:61037/GenericInfoService/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="6ad4d2c4-7b24-4359-a6db-1d087d494aa6" SourceId="1" SourceUrl="net.tcp://localhost:9091/GenericInfoService/mex/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="c7246146-6c34-4732-b35a-a7c51c82f011" SourceId="1" SourceUrl="net.tcp://localhost:9091/GenericInfoService/mex/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="d82c0a57-cb08-41d2-ae7c-cdeb6a72f860" SourceId="1" SourceUrl="net.tcp://localhost:9091/GenericInfoService/mex/mex" />
-    <MetadataFile FileName="GenericInfo.Data.xsd" MetadataType="Schema" ID="a372c583-d4e4-449b-88ba-8b14cfc29203" SourceId="1" SourceUrl="net.tcp://localhost:9091/GenericInfoService/mex/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="b599f726-408a-411f-ba98-e74c63213c91" SourceId="1" SourceUrl="net.tcp://wi-gate.technikum-wien.at:61037/GenericInfoService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="370e0e0a-50e4-4d59-91e8-35bfdcb67e54" SourceId="1" SourceUrl="net.tcp://wi-gate.technikum-wien.at:61037/GenericInfoService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="d0decd39-3e46-423a-b852-568ce0617345" SourceId="1" SourceUrl="net.tcp://wi-gate.technikum-wien.at:61037/GenericInfoService/mex" />
+    <MetadataFile FileName="GenericInfo.Data.xsd" MetadataType="Schema" ID="dabdea7d-dbea-4f1e-ad8f-335e864eac31" SourceId="1" SourceUrl="net.tcp://wi-gate.technikum-wien.at:61037/GenericInfoService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

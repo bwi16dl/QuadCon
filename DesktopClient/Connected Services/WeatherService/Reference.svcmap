@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bab7a64d-a8dd-4f9e-b718-438b3bbce5d5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="77e066b8-6745-47c9-9913-94e777967443" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -21,12 +21,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="net.tcp://localhost:9093/WeatherService/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="net.tcp://wi-gate.technikum-wien.at:61237/WeatherService/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="89985569-ab38-49a0-af08-836f6ae2127e" SourceId="1" SourceUrl="net.tcp://localhost:9093/WeatherService/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="152d1d9a-38a0-4982-a8b5-6568ac0ac20a" SourceId="1" SourceUrl="net.tcp://localhost:9093/WeatherService/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="0e433a4f-e2dd-4004-bf26-11d694054604" SourceId="1" SourceUrl="net.tcp://localhost:9093/WeatherService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="fe534da6-610a-4c8c-806d-31e571ce6be3" SourceId="1" SourceUrl="net.tcp://wi-gate.technikum-wien.at:61237/WeatherService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="b902e56b-6e05-46f1-9c33-1c23f3d50fed" SourceId="1" SourceUrl="net.tcp://wi-gate.technikum-wien.at:61237/WeatherService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="d00c7ae8-c8d2-49aa-a618-b1c2f83903a6" SourceId="1" SourceUrl="net.tcp://wi-gate.technikum-wien.at:61237/WeatherService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -104,9 +104,9 @@
   </wsdl:binding>
   <wsdl:service name="AdminService">
     <wsdl:port name="NetTcpBinding_IAdminService" binding="tns:NetTcpBinding_IAdminService">
-      <soap12:address location="net.tcp://localhost:9094/AdminService/" />
+      <soap12:address location="net.tcp://wi-gate.technikum-wien.at:61337/AdminService/" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:9094/AdminService/</wsa10:Address>
+        <wsa10:Address>net.tcp://wi-gate.technikum-wien.at:61337/AdminService/</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <Dns>localhost</Dns>
         </Identity>

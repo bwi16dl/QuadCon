@@ -177,13 +177,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\AdminService\Arrays1.xsd">
+    <None Include="Connected Services\AdminService\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AdminService\BusinessRules.DataCollector1.xsd">
+    <None Include="Connected Services\AdminService\BusinessRules.DataCollector.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AdminService\BusinessRules1.xsd">
+    <None Include="Connected Services\AdminService\BusinessRules.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\AdminService\DesktopClient.AdminService.ExposedData.datasource">
@@ -192,11 +192,11 @@
     <None Include="Connected Services\AdminService\DesktopClient.AdminService.Rule.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\AdminService\service1.wsdl" />
-    <None Include="Connected Services\AdminService\service2.xsd">
+    <None Include="Connected Services\AdminService\service.wsdl" />
+    <None Include="Connected Services\AdminService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AdminService\service21.xsd">
+    <None Include="Connected Services\AdminService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\GenericInfoService\DesktopClient.GenericInfoService.GenericInfo.datasource">
@@ -276,6 +276,18 @@
     <WCFMetadataStorage Include="Connected Services\WeatherService\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\TestService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TestService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TestService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Connected Services\GenericInfoService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -283,18 +295,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\GenericInfoService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\AdminService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\AdminService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\AdminService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -324,13 +324,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\TestService\configuration91.svcinfo" />
+    <None Include="Connected Services\AdminService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\TestService\configuration.svcinfo" />
+    <None Include="Connected Services\AdminService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\TestService\Reference.svcmap">
+    <None Include="Connected Services\AdminService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

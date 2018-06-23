@@ -159,9 +159,9 @@
   </wsdl:binding>
   <wsdl:service name="TestService">
     <wsdl:port name="NetTcpBinding_ITestService" binding="tns:NetTcpBinding_ITestService">
-      <soap12:address location="net.tcp://localhost:9090/TestService/" />
+      <soap12:address location="net.tcp://wi-gate.technikum-wien.at:60937/TestService/" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:9090/TestService/</wsa10:Address>
+        <wsa10:Address>net.tcp://wi-gate.technikum-wien.at:60937/TestService/</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <Dns>localhost</Dns>
         </Identity>

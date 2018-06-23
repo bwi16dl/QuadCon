@@ -140,9 +140,9 @@
   </wsdl:binding>
   <wsdl:service name="GenericInfoService">
     <wsdl:port name="NetTcpBinding_IGenericInfoService" binding="tns:NetTcpBinding_IGenericInfoService">
-      <soap12:address location="net.tcp://localhost:9091/GenericInfoService/" />
+      <soap12:address location="net.tcp://wi-gate.technikum-wien.at:61037/GenericInfoService/" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:9091/GenericInfoService/</wsa10:Address>
+        <wsa10:Address>net.tcp://wi-gate.technikum-wien.at:61037/GenericInfoService/</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <Dns>localhost</Dns>
         </Identity>

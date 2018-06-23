@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="0BTwXJGpP5X0teqMhDDWQEnQJbg=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="pUFA+WBmH9hHEtZjehIj4U1Er24=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="netTcpBinding" name="NetTcpBinding_IWeatherService">
       <properties>
@@ -121,10 +121,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="NetTcpBinding_IWeatherService" contract="WeatherService.IWeatherService" bindingType="netTcpBinding" address="net.tcp://localhost:9093/WeatherService/" bindingConfiguration="NetTcpBinding_IWeatherService">
+    <endpoint name="NetTcpBinding_IWeatherService" contract="WeatherService.IWeatherService" bindingType="netTcpBinding" address="net.tcp://wi-gate.technikum-wien.at:61237/WeatherService/" bindingConfiguration="NetTcpBinding_IWeatherService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://localhost:9093/WeatherService/</serializedValue>
+          <serializedValue>net.tcp://wi-gate.technikum-wien.at:61237/WeatherService/</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

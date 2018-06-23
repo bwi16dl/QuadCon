@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="slrHwDq3HP7axDPuJY3bKyDDWw0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="3zxWm4khx4hql1b8//Z2YgrqxNk=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="netTcpBinding" name="NetTcpBinding_IAdminService">
       <properties>
@@ -121,10 +121,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="NetTcpBinding_IAdminService" contract="AdminService.IAdminService" bindingType="netTcpBinding" address="net.tcp://localhost:9094/AdminService/" bindingConfiguration="NetTcpBinding_IAdminService">
+    <endpoint name="NetTcpBinding_IAdminService" contract="AdminService.IAdminService" bindingType="netTcpBinding" address="net.tcp://wi-gate.technikum-wien.at:61337/AdminService/" bindingConfiguration="NetTcpBinding_IAdminService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://localhost:9094/AdminService/</serializedValue>
+          <serializedValue>net.tcp://wi-gate.technikum-wien.at:61337/AdminService/</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
