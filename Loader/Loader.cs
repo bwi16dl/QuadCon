@@ -14,8 +14,8 @@ namespace MEFLoader
 {
     public class Loader
     {
-        private string path = @"..\..\..\LOADER\CONNECTORS";
-        // private string path = @"LOADER\CONNECTORS"; //string that has to be used when we deploy the software via installer!
+        //private string path = @"..\..\..\LOADER\CONNECTORS";
+        private string path = @"LOADER\CONNECTORS"; //string that has to be used when we deploy the software via installer!
 
         [ImportMany(typeof(ITest))]
         public List<ITest> Test { get; set; }
