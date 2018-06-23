@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GenericInfoService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IGenericInfoService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GenericInfo.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGenericInfoService_GetName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetName" />
+  </wsdl:message>
+  <wsdl:message name="IGenericInfoService_GetName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericInfoService_GetInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfo" />
+  </wsdl:message>
+  <wsdl:message name="IGenericInfoService_GetInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericInfoService_SetName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetName" />
+  </wsdl:message>
+  <wsdl:message name="IGenericInfoService_SetName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericInfoService_SetInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetInfo" />
+  </wsdl:message>
+  <wsdl:message name="IGenericInfoService_SetInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericInfoService_GetRonsQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRonsQuote" />
+  </wsdl:message>
+  <wsdl:message name="IGenericInfoService_GetRonsQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRonsQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericInfoService_GetIsUp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsUp" />
+  </wsdl:message>
+  <wsdl:message name="IGenericInfoService_GetIsUp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsUpResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGenericInfoService">
+    <wsdl:operation name="GetName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericInfoService/GetName" message="tns:IGenericInfoService_GetName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericInfoService/GetNameResponse" message="tns:IGenericInfoService_GetName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericInfoService/GetInfo" message="tns:IGenericInfoService_GetInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericInfoService/GetInfoResponse" message="tns:IGenericInfoService_GetInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericInfoService/SetName" message="tns:IGenericInfoService_SetName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericInfoService/SetNameResponse" message="tns:IGenericInfoService_SetName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericInfoService/SetInfo" message="tns:IGenericInfoService_SetInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericInfoService/SetInfoResponse" message="tns:IGenericInfoService_SetInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRonsQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericInfoService/GetRonsQuote" message="tns:IGenericInfoService_GetRonsQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericInfoService/GetRonsQuoteResponse" message="tns:IGenericInfoService_GetRonsQuote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsUp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericInfoService/GetIsUp" message="tns:IGenericInfoService_GetIsUp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericInfoService/GetIsUpResponse" message="tns:IGenericInfoService_GetIsUp_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IGenericInfoService" type="tns:IGenericInfoService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IGenericInfoService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetName">
+      <soap12:operation soapAction="http://tempuri.org/IGenericInfoService/GetName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfo">
+      <soap12:operation soapAction="http://tempuri.org/IGenericInfoService/GetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetName">
+      <soap12:operation soapAction="http://tempuri.org/IGenericInfoService/SetName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInfo">
+      <soap12:operation soapAction="http://tempuri.org/IGenericInfoService/SetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRonsQuote">
+      <soap12:operation soapAction="http://tempuri.org/IGenericInfoService/GetRonsQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsUp">
+      <soap12:operation soapAction="http://tempuri.org/IGenericInfoService/GetIsUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GenericInfoService">
+    <wsdl:port name="NetTcpBinding_IGenericInfoService" binding="tns:NetTcpBinding_IGenericInfoService">
+      <soap12:address location="net.tcp://localhost:9091/GenericInfoService/" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9091/GenericInfoService/</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

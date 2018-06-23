@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RulesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BusinessRule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="DayFrom" Type="varchar" MaxLength="50" />
+          <Property Name="DayTill" Type="varchar" MaxLength="50" />
+          <Property Name="TimeFrom" Type="varchar" MaxLength="50" />
+          <Property Name="TimeTill" Type="varchar" MaxLength="50" />
+          <Property Name="Link" Type="varchar" MaxLength="50" />
+          <Property Name="Source" Type="varchar" MaxLength="50" />
+          <Property Name="Action" Type="varchar" MaxLength="50" />
+          <Property Name="Parameter" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Trigger">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RuleId" Type="int" Nullable="false" />
+          <Property Name="Source" Type="varchar" MaxLength="50" />
+          <Property Name="Attribute" Type="varchar" MaxLength="50" />
+          <Property Name="Threshold" Type="varchar" MaxLength="50" />
+          <Property Name="Comparator" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="RulesModelStoreContainer">
+          <EntitySet Name="BusinessRule" EntityType="Self.BusinessRule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trigger" EntityType="Self.Trigger" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RulesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BusinessRule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DayFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DayTill" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TimeFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TimeTill" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Link" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Action" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Parameter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Trigger">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RuleId" Type="Int32" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Attribute" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Threshold" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comparator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="BusinessRulesModel" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BusinessRules" EntityType="Self.BusinessRule" />
+          <EntitySet Name="Triggers" EntityType="Self.Trigger" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RulesModelStoreContainer" CdmEntityContainer="BusinessRulesModel">
+          <EntitySetMapping Name="BusinessRules">
+            <EntityTypeMapping TypeName="RulesModel.BusinessRule">
+              <MappingFragment StoreEntitySet="BusinessRule">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DayFrom" ColumnName="DayFrom" />
+                <ScalarProperty Name="DayTill" ColumnName="DayTill" />
+                <ScalarProperty Name="TimeFrom" ColumnName="TimeFrom" />
+                <ScalarProperty Name="TimeTill" ColumnName="TimeTill" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Parameter" ColumnName="Parameter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Triggers">
+            <EntityTypeMapping TypeName="RulesModel.Trigger">
+              <MappingFragment StoreEntitySet="Trigger">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RuleId" ColumnName="RuleId" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Attribute" ColumnName="Attribute" />
+                <ScalarProperty Name="Threshold" ColumnName="Threshold" />
+                <ScalarProperty Name="Comparator" ColumnName="Comparator" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
