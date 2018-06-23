@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DesktopClient.AdminService {
+namespace ServerClient.AdminService {
     using System.Runtime.Serialization;
     using System;
     
@@ -53,7 +53,7 @@ namespace DesktopClient.AdminService {
         private string TimeTillField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<DesktopClient.AdminService.Trigger> TriggersField;
+        private System.Collections.Generic.List<ServerClient.AdminService.Trigger> TriggersField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -196,7 +196,7 @@ namespace DesktopClient.AdminService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<DesktopClient.AdminService.Trigger> Triggers {
+        public System.Collections.Generic.List<ServerClient.AdminService.Trigger> Triggers {
             get {
                 return this.TriggersField;
             }
@@ -393,37 +393,37 @@ namespace DesktopClient.AdminService {
     public interface IAdminService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/GetBusinessRules", ReplyAction="http://tempuri.org/IAdminService/GetBusinessRulesResponse")]
-        System.Collections.Generic.List<DesktopClient.AdminService.Rule> GetBusinessRules();
+        System.Collections.Generic.List<ServerClient.AdminService.Rule> GetBusinessRules();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/GetBusinessRules", ReplyAction="http://tempuri.org/IAdminService/GetBusinessRulesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<DesktopClient.AdminService.Rule>> GetBusinessRulesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServerClient.AdminService.Rule>> GetBusinessRulesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/GetExposedData", ReplyAction="http://tempuri.org/IAdminService/GetExposedDataResponse")]
-        System.Collections.Generic.List<DesktopClient.AdminService.ExposedData> GetExposedData();
+        System.Collections.Generic.List<ServerClient.AdminService.ExposedData> GetExposedData();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/GetExposedData", ReplyAction="http://tempuri.org/IAdminService/GetExposedDataResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<DesktopClient.AdminService.ExposedData>> GetExposedDataAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServerClient.AdminService.ExposedData>> GetExposedDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/AddBusinessRule", ReplyAction="http://tempuri.org/IAdminService/AddBusinessRuleResponse")]
-        void AddBusinessRule(DesktopClient.AdminService.Rule rule);
+        void AddBusinessRule(ServerClient.AdminService.Rule rule);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/AddBusinessRule", ReplyAction="http://tempuri.org/IAdminService/AddBusinessRuleResponse")]
-        System.Threading.Tasks.Task AddBusinessRuleAsync(DesktopClient.AdminService.Rule rule);
+        System.Threading.Tasks.Task AddBusinessRuleAsync(ServerClient.AdminService.Rule rule);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/RemoveBusinessRule", ReplyAction="http://tempuri.org/IAdminService/RemoveBusinessRuleResponse")]
-        void RemoveBusinessRule(DesktopClient.AdminService.Rule rule);
+        void RemoveBusinessRule(ServerClient.AdminService.Rule rule);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/RemoveBusinessRule", ReplyAction="http://tempuri.org/IAdminService/RemoveBusinessRuleResponse")]
-        System.Threading.Tasks.Task RemoveBusinessRuleAsync(DesktopClient.AdminService.Rule rule);
+        System.Threading.Tasks.Task RemoveBusinessRuleAsync(ServerClient.AdminService.Rule rule);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAdminServiceChannel : DesktopClient.AdminService.IAdminService, System.ServiceModel.IClientChannel {
+    public interface IAdminServiceChannel : ServerClient.AdminService.IAdminService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AdminServiceClient : System.ServiceModel.ClientBase<DesktopClient.AdminService.IAdminService>, DesktopClient.AdminService.IAdminService {
+    public partial class AdminServiceClient : System.ServiceModel.ClientBase<ServerClient.AdminService.IAdminService>, ServerClient.AdminService.IAdminService {
         
         public AdminServiceClient() {
         }
@@ -444,35 +444,35 @@ namespace DesktopClient.AdminService {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<DesktopClient.AdminService.Rule> GetBusinessRules() {
+        public System.Collections.Generic.List<ServerClient.AdminService.Rule> GetBusinessRules() {
             return base.Channel.GetBusinessRules();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<DesktopClient.AdminService.Rule>> GetBusinessRulesAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServerClient.AdminService.Rule>> GetBusinessRulesAsync() {
             return base.Channel.GetBusinessRulesAsync();
         }
         
-        public System.Collections.Generic.List<DesktopClient.AdminService.ExposedData> GetExposedData() {
+        public System.Collections.Generic.List<ServerClient.AdminService.ExposedData> GetExposedData() {
             return base.Channel.GetExposedData();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<DesktopClient.AdminService.ExposedData>> GetExposedDataAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServerClient.AdminService.ExposedData>> GetExposedDataAsync() {
             return base.Channel.GetExposedDataAsync();
         }
         
-        public void AddBusinessRule(DesktopClient.AdminService.Rule rule) {
+        public void AddBusinessRule(ServerClient.AdminService.Rule rule) {
             base.Channel.AddBusinessRule(rule);
         }
         
-        public System.Threading.Tasks.Task AddBusinessRuleAsync(DesktopClient.AdminService.Rule rule) {
+        public System.Threading.Tasks.Task AddBusinessRuleAsync(ServerClient.AdminService.Rule rule) {
             return base.Channel.AddBusinessRuleAsync(rule);
         }
         
-        public void RemoveBusinessRule(DesktopClient.AdminService.Rule rule) {
+        public void RemoveBusinessRule(ServerClient.AdminService.Rule rule) {
             base.Channel.RemoveBusinessRule(rule);
         }
         
-        public System.Threading.Tasks.Task RemoveBusinessRuleAsync(DesktopClient.AdminService.Rule rule) {
+        public System.Threading.Tasks.Task RemoveBusinessRuleAsync(ServerClient.AdminService.Rule rule) {
             return base.Channel.RemoveBusinessRuleAsync(rule);
         }
     }

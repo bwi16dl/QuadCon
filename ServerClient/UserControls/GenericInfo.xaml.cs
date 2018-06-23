@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DesktopClient.UserControls
+namespace ServerClient.UserControls
 {
     /// <summary>
     /// Interaction logic for GenericInfo.xaml

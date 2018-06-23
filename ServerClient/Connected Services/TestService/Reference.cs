@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DesktopClient.TestService {
+namespace ServerClient.TestService {
     using System.Runtime.Serialization;
     using System;
     
@@ -85,16 +85,16 @@ namespace DesktopClient.TestService {
         System.Threading.Tasks.Task<string> GetNameAsync(string sourceName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestService/GetOneDay", ReplyAction="http://tempuri.org/ITestService/GetOneDayResponse")]
-        DesktopClient.TestService.TestData GetOneDay(string sourceName);
+        ServerClient.TestService.TestData GetOneDay(string sourceName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestService/GetOneDay", ReplyAction="http://tempuri.org/ITestService/GetOneDayResponse")]
-        System.Threading.Tasks.Task<DesktopClient.TestService.TestData> GetOneDayAsync(string sourceName);
+        System.Threading.Tasks.Task<ServerClient.TestService.TestData> GetOneDayAsync(string sourceName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestService/GetThreeDays", ReplyAction="http://tempuri.org/ITestService/GetThreeDaysResponse")]
-        System.Collections.Generic.List<DesktopClient.TestService.TestData> GetThreeDays(string sourceName);
+        System.Collections.Generic.List<ServerClient.TestService.TestData> GetThreeDays(string sourceName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestService/GetThreeDays", ReplyAction="http://tempuri.org/ITestService/GetThreeDaysResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<DesktopClient.TestService.TestData>> GetThreeDaysAsync(string sourceName);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServerClient.TestService.TestData>> GetThreeDaysAsync(string sourceName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestService/SetName", ReplyAction="http://tempuri.org/ITestService/SetNameResponse")]
         void SetName(string sourceName, string name);
@@ -103,16 +103,16 @@ namespace DesktopClient.TestService {
         System.Threading.Tasks.Task SetNameAsync(string sourceName, string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestService/SetOneDay", ReplyAction="http://tempuri.org/ITestService/SetOneDayResponse")]
-        void SetOneDay(string sourceName, DesktopClient.TestService.TestData oneDay);
+        void SetOneDay(string sourceName, ServerClient.TestService.TestData oneDay);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestService/SetOneDay", ReplyAction="http://tempuri.org/ITestService/SetOneDayResponse")]
-        System.Threading.Tasks.Task SetOneDayAsync(string sourceName, DesktopClient.TestService.TestData oneDay);
+        System.Threading.Tasks.Task SetOneDayAsync(string sourceName, ServerClient.TestService.TestData oneDay);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestService/SetThreeDays", ReplyAction="http://tempuri.org/ITestService/SetThreeDaysResponse")]
-        void SetThreeDays(string sourceName, System.Collections.Generic.List<DesktopClient.TestService.TestData> threeDays);
+        void SetThreeDays(string sourceName, System.Collections.Generic.List<ServerClient.TestService.TestData> threeDays);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestService/SetThreeDays", ReplyAction="http://tempuri.org/ITestService/SetThreeDaysResponse")]
-        System.Threading.Tasks.Task SetThreeDaysAsync(string sourceName, System.Collections.Generic.List<DesktopClient.TestService.TestData> threeDays);
+        System.Threading.Tasks.Task SetThreeDaysAsync(string sourceName, System.Collections.Generic.List<ServerClient.TestService.TestData> threeDays);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestService/Trigger", ReplyAction="http://tempuri.org/ITestService/TriggerResponse")]
         void Trigger(string sourceName, string printWhat);
@@ -122,12 +122,12 @@ namespace DesktopClient.TestService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ITestServiceChannel : DesktopClient.TestService.ITestService, System.ServiceModel.IClientChannel {
+    public interface ITestServiceChannel : ServerClient.TestService.ITestService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class TestServiceClient : System.ServiceModel.ClientBase<DesktopClient.TestService.ITestService>, DesktopClient.TestService.ITestService {
+    public partial class TestServiceClient : System.ServiceModel.ClientBase<ServerClient.TestService.ITestService>, ServerClient.TestService.ITestService {
         
         public TestServiceClient() {
         }
@@ -156,19 +156,19 @@ namespace DesktopClient.TestService {
             return base.Channel.GetNameAsync(sourceName);
         }
         
-        public DesktopClient.TestService.TestData GetOneDay(string sourceName) {
+        public ServerClient.TestService.TestData GetOneDay(string sourceName) {
             return base.Channel.GetOneDay(sourceName);
         }
         
-        public System.Threading.Tasks.Task<DesktopClient.TestService.TestData> GetOneDayAsync(string sourceName) {
+        public System.Threading.Tasks.Task<ServerClient.TestService.TestData> GetOneDayAsync(string sourceName) {
             return base.Channel.GetOneDayAsync(sourceName);
         }
         
-        public System.Collections.Generic.List<DesktopClient.TestService.TestData> GetThreeDays(string sourceName) {
+        public System.Collections.Generic.List<ServerClient.TestService.TestData> GetThreeDays(string sourceName) {
             return base.Channel.GetThreeDays(sourceName);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<DesktopClient.TestService.TestData>> GetThreeDaysAsync(string sourceName) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServerClient.TestService.TestData>> GetThreeDaysAsync(string sourceName) {
             return base.Channel.GetThreeDaysAsync(sourceName);
         }
         
@@ -180,19 +180,19 @@ namespace DesktopClient.TestService {
             return base.Channel.SetNameAsync(sourceName, name);
         }
         
-        public void SetOneDay(string sourceName, DesktopClient.TestService.TestData oneDay) {
+        public void SetOneDay(string sourceName, ServerClient.TestService.TestData oneDay) {
             base.Channel.SetOneDay(sourceName, oneDay);
         }
         
-        public System.Threading.Tasks.Task SetOneDayAsync(string sourceName, DesktopClient.TestService.TestData oneDay) {
+        public System.Threading.Tasks.Task SetOneDayAsync(string sourceName, ServerClient.TestService.TestData oneDay) {
             return base.Channel.SetOneDayAsync(sourceName, oneDay);
         }
         
-        public void SetThreeDays(string sourceName, System.Collections.Generic.List<DesktopClient.TestService.TestData> threeDays) {
+        public void SetThreeDays(string sourceName, System.Collections.Generic.List<ServerClient.TestService.TestData> threeDays) {
             base.Channel.SetThreeDays(sourceName, threeDays);
         }
         
-        public System.Threading.Tasks.Task SetThreeDaysAsync(string sourceName, System.Collections.Generic.List<DesktopClient.TestService.TestData> threeDays) {
+        public System.Threading.Tasks.Task SetThreeDaysAsync(string sourceName, System.Collections.Generic.List<ServerClient.TestService.TestData> threeDays) {
             return base.Channel.SetThreeDaysAsync(sourceName, threeDays);
         }
         

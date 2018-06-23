@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DesktopClient.KodiService {
+namespace ServerClient.KodiService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -89,12 +89,12 @@ namespace DesktopClient.KodiService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IKodiServiceChannel : DesktopClient.KodiService.IKodiService, System.ServiceModel.IClientChannel {
+    public interface IKodiServiceChannel : ServerClient.KodiService.IKodiService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class KodiServiceClient : System.ServiceModel.ClientBase<DesktopClient.KodiService.IKodiService>, DesktopClient.KodiService.IKodiService {
+    public partial class KodiServiceClient : System.ServiceModel.ClientBase<ServerClient.KodiService.IKodiService>, ServerClient.KodiService.IKodiService {
         
         public KodiServiceClient() {
         }

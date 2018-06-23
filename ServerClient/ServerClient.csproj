@@ -6,13 +6,28 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{714A395A-656C-4EE6-87B1-940A44BB8C96}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>DesktopClient</RootNamespace>
-    <AssemblyName>DesktopClient</AssemblyName>
+    <RootNamespace>ServerClient</RootNamespace>
+    <AssemblyName>ServerClient</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -177,39 +192,39 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\AdminService\Arrays1.xsd">
+    <None Include="Connected Services\AdminService\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AdminService\BusinessRules.DataCollector1.xsd">
+    <None Include="Connected Services\AdminService\BusinessRules.DataCollector.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AdminService\BusinessRules1.xsd">
+    <None Include="Connected Services\AdminService\BusinessRules.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AdminService\DesktopClient.AdminService.ExposedData.datasource">
+    <None Include="Connected Services\AdminService\ServerClient.AdminService.ExposedData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\AdminService\DesktopClient.AdminService.Rule.datasource">
+    <None Include="Connected Services\AdminService\ServerClient.AdminService.Rule.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\AdminService\service1.wsdl" />
-    <None Include="Connected Services\AdminService\service2.xsd">
+    <None Include="Connected Services\AdminService\service.wsdl" />
+    <None Include="Connected Services\AdminService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AdminService\service21.xsd">
+    <None Include="Connected Services\AdminService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericInfoService\DesktopClient.GenericInfoService.GenericInfo.datasource">
+    <None Include="Connected Services\GenericInfoService\GenericInfo.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericInfoService\ServerClient.GenericInfoService.GenericInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\GenericInfoService\GenericInfo.Data1.xsd">
+    <None Include="Connected Services\GenericInfoService\service.wsdl" />
+    <None Include="Connected Services\GenericInfoService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericInfoService\service1.wsdl" />
-    <None Include="Connected Services\GenericInfoService\service2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GenericInfoService\service21.xsd">
+    <None Include="Connected Services\GenericInfoService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\KodiService\Arrays.xsd">
@@ -222,7 +237,7 @@
     <None Include="Connected Services\KodiService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\TestService\DesktopClient.TestService.TestData.datasource">
+    <None Include="Connected Services\TestService\ServerClient.TestService.TestData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\TestService\service.wsdl" />
@@ -266,6 +281,18 @@
     <Resource Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
@@ -274,18 +301,6 @@
     <WCFMetadataStorage Include="Connected Services\KodiService\" />
     <WCFMetadataStorage Include="Connected Services\TestService\" />
     <WCFMetadataStorage Include="Connected Services\WeatherService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\TestService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\TestService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\TestService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\GenericInfoService\configuration91.svcinfo" />
@@ -300,13 +315,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\KodiService\configuration91.svcinfo" />
+    <None Include="Connected Services\AdminService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\KodiService\configuration.svcinfo" />
+    <None Include="Connected Services\AdminService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\KodiService\Reference.svcmap">
+    <None Include="Connected Services\AdminService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -324,13 +339,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AdminService\configuration91.svcinfo" />
+    <None Include="Connected Services\KodiService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AdminService\configuration.svcinfo" />
+    <None Include="Connected Services\KodiService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AdminService\Reference.svcmap">
+    <None Include="Connected Services\KodiService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TestService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TestService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TestService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

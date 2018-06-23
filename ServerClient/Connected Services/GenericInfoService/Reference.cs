@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DesktopClient.GenericInfoService {
+namespace ServerClient.GenericInfoService {
     using System.Runtime.Serialization;
     using System;
     
@@ -101,10 +101,10 @@ namespace DesktopClient.GenericInfoService {
         System.Threading.Tasks.Task<string> GetNameAsync(string sourceName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericInfoService/GetInfo", ReplyAction="http://tempuri.org/IGenericInfoService/GetInfoResponse")]
-        DesktopClient.GenericInfoService.GenericInfo GetInfo(string sourceName);
+        ServerClient.GenericInfoService.GenericInfo GetInfo(string sourceName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericInfoService/GetInfo", ReplyAction="http://tempuri.org/IGenericInfoService/GetInfoResponse")]
-        System.Threading.Tasks.Task<DesktopClient.GenericInfoService.GenericInfo> GetInfoAsync(string sourceName);
+        System.Threading.Tasks.Task<ServerClient.GenericInfoService.GenericInfo> GetInfoAsync(string sourceName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericInfoService/SetName", ReplyAction="http://tempuri.org/IGenericInfoService/SetNameResponse")]
         void SetName(string sourceName, string name);
@@ -113,10 +113,10 @@ namespace DesktopClient.GenericInfoService {
         System.Threading.Tasks.Task SetNameAsync(string sourceName, string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericInfoService/SetInfo", ReplyAction="http://tempuri.org/IGenericInfoService/SetInfoResponse")]
-        void SetInfo(string sourceName, DesktopClient.GenericInfoService.GenericInfo info);
+        void SetInfo(string sourceName, ServerClient.GenericInfoService.GenericInfo info);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericInfoService/SetInfo", ReplyAction="http://tempuri.org/IGenericInfoService/SetInfoResponse")]
-        System.Threading.Tasks.Task SetInfoAsync(string sourceName, DesktopClient.GenericInfoService.GenericInfo info);
+        System.Threading.Tasks.Task SetInfoAsync(string sourceName, ServerClient.GenericInfoService.GenericInfo info);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericInfoService/GetRonsQuote", ReplyAction="http://tempuri.org/IGenericInfoService/GetRonsQuoteResponse")]
         string GetRonsQuote(string sourceName);
@@ -132,12 +132,12 @@ namespace DesktopClient.GenericInfoService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IGenericInfoServiceChannel : DesktopClient.GenericInfoService.IGenericInfoService, System.ServiceModel.IClientChannel {
+    public interface IGenericInfoServiceChannel : ServerClient.GenericInfoService.IGenericInfoService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GenericInfoServiceClient : System.ServiceModel.ClientBase<DesktopClient.GenericInfoService.IGenericInfoService>, DesktopClient.GenericInfoService.IGenericInfoService {
+    public partial class GenericInfoServiceClient : System.ServiceModel.ClientBase<ServerClient.GenericInfoService.IGenericInfoService>, ServerClient.GenericInfoService.IGenericInfoService {
         
         public GenericInfoServiceClient() {
         }
@@ -166,11 +166,11 @@ namespace DesktopClient.GenericInfoService {
             return base.Channel.GetNameAsync(sourceName);
         }
         
-        public DesktopClient.GenericInfoService.GenericInfo GetInfo(string sourceName) {
+        public ServerClient.GenericInfoService.GenericInfo GetInfo(string sourceName) {
             return base.Channel.GetInfo(sourceName);
         }
         
-        public System.Threading.Tasks.Task<DesktopClient.GenericInfoService.GenericInfo> GetInfoAsync(string sourceName) {
+        public System.Threading.Tasks.Task<ServerClient.GenericInfoService.GenericInfo> GetInfoAsync(string sourceName) {
             return base.Channel.GetInfoAsync(sourceName);
         }
         
@@ -182,11 +182,11 @@ namespace DesktopClient.GenericInfoService {
             return base.Channel.SetNameAsync(sourceName, name);
         }
         
-        public void SetInfo(string sourceName, DesktopClient.GenericInfoService.GenericInfo info) {
+        public void SetInfo(string sourceName, ServerClient.GenericInfoService.GenericInfo info) {
             base.Channel.SetInfo(sourceName, info);
         }
         
-        public System.Threading.Tasks.Task SetInfoAsync(string sourceName, DesktopClient.GenericInfoService.GenericInfo info) {
+        public System.Threading.Tasks.Task SetInfoAsync(string sourceName, ServerClient.GenericInfoService.GenericInfo info) {
             return base.Channel.SetInfoAsync(sourceName, info);
         }
         

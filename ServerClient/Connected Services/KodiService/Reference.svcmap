@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bcaa6436-3aba-463e-9a0c-0a5214dcfb78" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2d3d2e58-9979-4d24-a9d8-3bc7a84c90a1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -24,10 +24,10 @@
     <MetadataSource Address="net.tcp://localhost:9092/KodiService/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="96777bdd-d313-4d38-b9b3-ec44daa2babf" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ed995569-36b2-41c2-be66-7b6080277c45" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="e073768b-9c68-4bcc-a169-86759c3fcfcc" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="f7bca36e-a2ee-4af1-9165-69c00b0726f2" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="59489e36-2e63-442c-9c7b-0b1643de887d" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="17abeacd-fa3b-476f-a40a-f046a1e86d90" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="82c4ac64-c802-45be-b78b-6641d508a9e4" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="79e1960f-62db-4351-895c-879e7fe90932" SourceId="1" SourceUrl="net.tcp://localhost:9092/KodiService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

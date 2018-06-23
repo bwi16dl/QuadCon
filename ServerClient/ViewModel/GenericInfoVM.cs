@@ -1,8 +1,5 @@
 using ServerClient.DataTypes;
-using ServerClient.GenericInfoService;
-using ServerClient.KodiService;
 using ServerClient.Messaging;
-using ServerClient.WeatherService;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Ioc;
@@ -11,6 +8,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using ServerClient.GenericInfoService;
 
 namespace ServerClient.ViewModel
 {
