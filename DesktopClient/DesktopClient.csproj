@@ -202,14 +202,14 @@
     <None Include="Connected Services\GenericInfoService\DesktopClient.GenericInfoService.GenericInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\GenericInfoService\GenericInfo.Data1.xsd">
+    <None Include="Connected Services\GenericInfoService\GenericInfo.Data.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericInfoService\service1.wsdl" />
-    <None Include="Connected Services\GenericInfoService\service2.xsd">
+    <None Include="Connected Services\GenericInfoService\service.wsdl" />
+    <None Include="Connected Services\GenericInfoService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericInfoService\service21.xsd">
+    <None Include="Connected Services\GenericInfoService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\KodiService\Arrays.xsd">
@@ -276,18 +276,6 @@
     <WCFMetadataStorage Include="Connected Services\WeatherService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\TestService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\TestService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\TestService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\GenericInfoService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -295,6 +283,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\GenericInfoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AdminService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AdminService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AdminService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -324,13 +324,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AdminService\configuration91.svcinfo" />
+    <None Include="Connected Services\TestService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AdminService\configuration.svcinfo" />
+    <None Include="Connected Services\TestService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AdminService\Reference.svcmap">
+    <None Include="Connected Services\TestService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

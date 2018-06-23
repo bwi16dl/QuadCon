@@ -89,6 +89,18 @@
   <wsdl:message name="IKodiService_ChangeVolume_OutputMessage">
     <wsdl:part name="parameters" element="tns:ChangeVolumeResponse" />
   </wsdl:message>
+  <wsdl:message name="IKodiService_SetUrl_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUrl" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_SetUrl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_AChangeVolume_InputMessage">
+    <wsdl:part name="parameters" element="tns:AChangeVolume" />
+  </wsdl:message>
+  <wsdl:message name="IKodiService_AChangeVolume_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AChangeVolumeResponse" />
+  </wsdl:message>
   <wsdl:portType name="IKodiService">
     <wsdl:operation name="GetName">
       <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/GetName" message="tns:IKodiService_GetName_InputMessage" />
@@ -137,6 +149,14 @@
     <wsdl:operation name="ChangeVolume">
       <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/ChangeVolume" message="tns:IKodiService_ChangeVolume_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/ChangeVolumeResponse" message="tns:IKodiService_ChangeVolume_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUrl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/SetUrl" message="tns:IKodiService_SetUrl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/SetUrlResponse" message="tns:IKodiService_SetUrl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AChangeVolume">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKodiService/AChangeVolume" message="tns:IKodiService_AChangeVolume_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKodiService/AChangeVolumeResponse" message="tns:IKodiService_AChangeVolume_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IKodiService" type="tns:IKodiService">
@@ -244,6 +264,24 @@
     </wsdl:operation>
     <wsdl:operation name="ChangeVolume">
       <soap12:operation soapAction="http://tempuri.org/IKodiService/ChangeVolume" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUrl">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/SetUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AChangeVolume">
+      <soap12:operation soapAction="http://tempuri.org/IKodiService/AChangeVolume" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

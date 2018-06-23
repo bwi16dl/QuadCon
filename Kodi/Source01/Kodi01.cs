@@ -45,7 +45,7 @@ namespace Kodi
                 }
                 return results;
             }
-            catch (Exception e) { return null; }
+            catch (Exception) { return null; }
         }
         public IDictionary<string, string> GetPictures()
         {
@@ -75,7 +75,7 @@ namespace Kodi
                             {
                                 results2.Add(json2.result.files[i].file, json2.result.files[i].label);
                             }
-                            catch (Exception e)
+                            catch (Exception)
                             {
 
                             }
@@ -105,7 +105,7 @@ namespace Kodi
                 }
                 return results;
             }
-            catch (Exception e) { return null; }
+            catch (Exception) { return null; }
 
         }
         public IDictionary<int, string> GetMovies()
@@ -125,7 +125,7 @@ namespace Kodi
                 }
                 return results;
             }
-            catch (Exception e) { return null; }
+            catch (Exception) { return null; }
 
 
 
@@ -147,7 +147,7 @@ namespace Kodi
                 }
                 return results;
             }
-            catch (Exception e) { return null; }
+            catch (Exception) { return null; }
         }
 
         #endregion
@@ -156,9 +156,9 @@ namespace Kodi
         public void SetName(string name)
         {
             this.name = name;
-            Console.WriteLine("\n\t=> Name set: " + name);
+            //Console.WriteLine("\n\t=> Name set: " + name);
             songs = GetSongs();
-            Console.WriteLine("\n\t=> Songs: " + name);
+            //Console.WriteLine("\n\t=> Songs: " + name);
 
         }
         #endregion
@@ -215,7 +215,7 @@ namespace Kodi
                 if (pingResult.Equals("") || pingResult == null) { return false; }
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
             }
             return false;

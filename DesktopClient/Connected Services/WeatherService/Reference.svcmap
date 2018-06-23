@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="437d70b0-0df9-437e-98a1-21ddb7cbb396" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bab7a64d-a8dd-4f9e-b718-438b3bbce5d5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -24,9 +24,9 @@
     <MetadataSource Address="net.tcp://localhost:9093/WeatherService/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="ff6cd0aa-8d6a-4f9c-86d5-83ffb617632b" SourceId="1" SourceUrl="net.tcp://localhost:9093/WeatherService/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="a6859fab-af1b-4003-82e0-0809a281d606" SourceId="1" SourceUrl="net.tcp://localhost:9093/WeatherService/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="4020155a-70bb-4e80-9b39-4314399ade8f" SourceId="1" SourceUrl="net.tcp://localhost:9093/WeatherService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="89985569-ab38-49a0-af08-836f6ae2127e" SourceId="1" SourceUrl="net.tcp://localhost:9093/WeatherService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="152d1d9a-38a0-4982-a8b5-6568ac0ac20a" SourceId="1" SourceUrl="net.tcp://localhost:9093/WeatherService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="0e433a4f-e2dd-4004-bf26-11d694054604" SourceId="1" SourceUrl="net.tcp://localhost:9093/WeatherService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -86,6 +86,18 @@ namespace ServerClient.KodiService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKodiService/ChangeVolume", ReplyAction="http://tempuri.org/IKodiService/ChangeVolumeResponse")]
         System.Threading.Tasks.Task ChangeVolumeAsync(string sourceName, int volume);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKodiService/SetUrl", ReplyAction="http://tempuri.org/IKodiService/SetUrlResponse")]
+        void SetUrl(string sourceName, string url);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKodiService/SetUrl", ReplyAction="http://tempuri.org/IKodiService/SetUrlResponse")]
+        System.Threading.Tasks.Task SetUrlAsync(string sourceName, string url);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKodiService/AChangeVolume", ReplyAction="http://tempuri.org/IKodiService/AChangeVolumeResponse")]
+        void AChangeVolume(string sourceName, int volume);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKodiService/AChangeVolume", ReplyAction="http://tempuri.org/IKodiService/AChangeVolumeResponse")]
+        System.Threading.Tasks.Task AChangeVolumeAsync(string sourceName, int volume);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -209,6 +221,22 @@ namespace ServerClient.KodiService {
         
         public System.Threading.Tasks.Task ChangeVolumeAsync(string sourceName, int volume) {
             return base.Channel.ChangeVolumeAsync(sourceName, volume);
+        }
+        
+        public void SetUrl(string sourceName, string url) {
+            base.Channel.SetUrl(sourceName, url);
+        }
+        
+        public System.Threading.Tasks.Task SetUrlAsync(string sourceName, string url) {
+            return base.Channel.SetUrlAsync(sourceName, url);
+        }
+        
+        public void AChangeVolume(string sourceName, int volume) {
+            base.Channel.AChangeVolume(sourceName, volume);
+        }
+        
+        public System.Threading.Tasks.Task AChangeVolumeAsync(string sourceName, int volume) {
+            return base.Channel.AChangeVolumeAsync(sourceName, volume);
         }
     }
 }

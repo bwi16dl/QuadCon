@@ -5,11 +5,26 @@ using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using System.Collections.Generic;
 using ServerClient.KodiService;
+using System.Threading.Tasks;
+
 namespace ServerClient.ViewModel
 {
-    
+
     public class KodiVM : ViewModelBase
     {
+
+        private string kodiUrl;
+
+        public string KodiUrl
+        {
+            get { return kodiUrl; }
+            set
+            {
+                kodiUrl = value; RaisePropertyChanged("KodiUrl");
+                client.SetUrl(Name, kodiUrl);
+            }
+        }
+
         private KodiServiceClient client = new KodiServiceClient();
 
         private string name;
@@ -33,9 +48,13 @@ namespace ServerClient.ViewModel
         public int Volume
         {
             get { return volume; }
-            set {
+            set
+            {
                 volume = value; RaisePropertyChanged("Volume");
-                client.ChangeVolume(Name, volume);
+                Task.Run(() =>
+                {
+                    client.ChangeVolume(Name, volume);
+                });
             }
         }
 
@@ -122,14 +141,14 @@ namespace ServerClient.ViewModel
             set { playPause = value; }
         }
 
-      
+
 
         private object selectedSong;
 
         public object SelectedSong
         {
             get { return selectedSong; }
-            set { selectedSong = value; RaisePropertyChanged("SelectedSong");  }
+            set { selectedSong = value; RaisePropertyChanged("SelectedSong"); }
         }
 
         private object selectedVideo;
@@ -162,10 +181,14 @@ namespace ServerClient.ViewModel
         public KodiVM()
         {
             Name = "Kodi Source 01";
-            Songs = client.GetSongs(Name);
-            Videos = client.GetMovies(Name);
-            Photos = client.GetPictures(Name);
-            Playlists = client.GetPlaylists(Name);
+            KodiUrl = @"http://192.168.0.192:8080";
+            Task.Run(() =>
+            {
+                Songs = client.GetSongs(Name);
+                Videos = client.GetMovies(Name);
+                Photos = client.GetPictures(Name);
+                Playlists = client.GetPlaylists(Name);
+            });
             Volume = 90;
             messenger = SimpleIoc.Default.GetInstance<Messenger>();
             SelectedSong = null;
@@ -175,8 +198,10 @@ namespace ServerClient.ViewModel
 
             PlaySong = new RelayCommand(
                 () => {
-                    
-                     client.PlaySong(Name, ((KeyValuePair<int, string>)SelectedSong).Key );
+                    Task.Run(() =>
+                    {
+                        client.PlaySong(Name, ((KeyValuePair<int, string>)SelectedSong).Key);
+                    });
                     // TODO
                     SendMessage(new MessageItem("info", "Kodi: Playing Song " + ((KeyValuePair<int, string>)SelectedSong).Value));
                 },
@@ -184,35 +209,44 @@ namespace ServerClient.ViewModel
 
             PlayVideo = new RelayCommand(
                () => {
-
-                   client.PlayMovie(Name, ((KeyValuePair<int, string>)SelectedVideo).Key);
-                    // TODO
-                    SendMessage(new MessageItem("info", "Kodi: Playing Video " + ((KeyValuePair<int, string>)SelectedVideo).Value));
+                   Task.Run(() =>
+                   {
+                       client.PlayMovie(Name, ((KeyValuePair<int, string>)SelectedVideo).Key);
+                   });
+                   // TODO
+                   SendMessage(new MessageItem("info", "Kodi: Playing Video " + ((KeyValuePair<int, string>)SelectedVideo).Value));
                },
                () => { return SelectedVideo != null; });
 
             PlayPhoto = new RelayCommand(
                () => {
-
-                    client.PlayPicture(Name, ((KeyValuePair<string, string>)SelectedPhoto).Key);
-                    // TODO
-                    SendMessage(new MessageItem("info", "Kodi: Playing Photo " + ((KeyValuePair<string, string>)SelectedPhoto).Value));
+                   Task.Run(() =>
+                   {
+                       client.PlayPicture(Name, ((KeyValuePair<string, string>)SelectedPhoto).Key);
+                   });
+                   // TODO
+                   SendMessage(new MessageItem("info", "Kodi: Playing Photo " + ((KeyValuePair<string, string>)SelectedPhoto).Value));
                },
                //() => { return SelectedPhoto != null; });
                () => { return SelectedPhoto != null; });
 
             PlayPlaylist = new RelayCommand(
                () => {
-
-                   client.PlayPlaylist(Name, ((KeyValuePair<string, string>)SelectedPlaylist).Key);
-                    // TODO
-                    SendMessage(new MessageItem("info", "Kodi: Playing Playlist " + ((KeyValuePair<string, string>)SelectedPlaylist).Value));
+                   Task.Run(() =>
+                   {
+                       client.PlayPlaylist(Name, ((KeyValuePair<string, string>)SelectedPlaylist).Key);
+                   });
+                   // TODO
+                   SendMessage(new MessageItem("info", "Kodi: Playing Playlist " + ((KeyValuePair<string, string>)SelectedPlaylist).Value));
                },
                () => { return SelectedPlaylist != null; });
 
             PlayPause = new RelayCommand(
                () => {
-                   client.PlayPause(Name);
+                   Task.Run(() =>
+                   {
+                       client.PlayPause(Name);
+                   });
                    // TODO
                    SendMessage(new MessageItem("info", "Kodi: Issued PlayPause Command"));
                },
@@ -220,19 +254,23 @@ namespace ServerClient.ViewModel
 
             Refresh = new RelayCommand(
                () => {
-                   Songs = new Dictionary<int, string>();
-                   Videos = new Dictionary<int, string>();
-                   Photos = new Dictionary<string, string>();
-                   Playlists = new Dictionary<string, string>();
 
-                   Songs = client.GetSongs(Name);
-                   Videos = client.GetMovies(Name);
-                   Photos = client.GetPictures(Name);
-                   Playlists = client.GetPlaylists(Name);
-                   SelectedSong = null;
-                   SelectedPhoto = null;
-                   SelectedVideo = null;
-                   SelectedPlaylist = null;
+                   Task.Run(() => {
+                       Songs = new Dictionary<int, string>();
+                       Videos = new Dictionary<int, string>();
+                       Photos = new Dictionary<string, string>();
+                       Playlists = new Dictionary<string, string>();
+
+                       Songs = client.GetSongs(Name);
+                       Videos = client.GetMovies(Name);
+                       Photos = client.GetPictures(Name);
+                       Playlists = client.GetPlaylists(Name);
+                       SelectedSong = null;
+                       SelectedPhoto = null;
+                       SelectedVideo = null;
+                       SelectedPlaylist = null;
+                   });
+
                    // TODO
                    SendMessage(new MessageItem("info", "Kodi: Kodi GUI Refreshed"));
                },

@@ -161,4 +161,30 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="SetUrl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sourceName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetUrlResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AChangeVolume">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sourceName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="volume" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AChangeVolumeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

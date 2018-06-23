@@ -11,6 +11,7 @@ using Test;
 namespace Controller.Services
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Kodi" in both code and config file together.
+    [ServiceBehavior(AddressFilterMode = AddressFilterMode.Any)]
     public class KodiService : IKodiService
     {
         public string GetName(string sourceName) { return KodiObject.Find(sourceName).GetName(); }
