@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:ServerClient.UserControls"
              mc:Ignorable="d"
              DataContext="{Binding Source={StaticResource Locator}, Path=Weather}"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="350" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="52*"/>
@@ -32,7 +32,7 @@
         </StackPanel>
         <StackPanel Grid.Row="2">
             <!--Return the Output in here-->
-            <TextBox Margin="10" Height="300" Text="{Binding Weatherreturn, UpdateSourceTrigger=PropertyChanged}" ScrollViewer.CanContentScroll="True"></TextBox>
+            <TextBox Margin="10" Height="232" Text="{Binding Weatherreturn, UpdateSourceTrigger=PropertyChanged}" ScrollViewer.CanContentScroll="True"></TextBox>
             <!--The most update query is always on the bottom of the textbox field!-->
         </StackPanel>
     </Grid>

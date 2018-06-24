@@ -11,7 +11,7 @@ using System.Windows.Threading;
 
 namespace ServerClient.ViewModel
 {
-    
+
     public class MainViewModel : ViewModelBase
     {
         private DispatcherTimer clockTimer;
@@ -70,6 +70,7 @@ namespace ServerClient.ViewModel
             set { messages = value; }
         }
 
+
         public void ProcessMessage(PropertyChangedMessage<MessageItem> message)
         {
             MessageItem item = message.NewValue;
@@ -77,7 +78,8 @@ namespace ServerClient.ViewModel
             new Thread(() =>
             {
                 Thread.Sleep(5000);
-                Application.Current.Dispatcher.Invoke(() => { Messages.Remove(item); }); }).Start();
+                Application.Current.Dispatcher.Invoke(() => { Messages.Remove(item); });
+            }).Start();
         }
         #endregion
 
