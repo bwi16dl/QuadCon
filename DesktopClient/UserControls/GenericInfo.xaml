@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:DesktopClient.UserControls"
              xmlns:Converters="clr-namespace:DesktopClient.Converters" x:Class="DesktopClient.UserControls.GenericInfo"
              mc:Ignorable="d" 
-             Height="450" Width="800"
+             Height="350" Width="800"
              >
     
     <UserControl.Resources>
@@ -20,12 +20,12 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="3*"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2">
@@ -62,7 +62,7 @@
         </StackPanel>
 
         <!--<StackPanel Grid.Row="1">-->
-        <ListBox ItemsSource="{Binding ErrorList}" Grid.Row="1" Grid.Column="1" Margin="10" HorizontalAlignment="Center" Width="500">
+        <ListBox ItemsSource="{Binding ErrorList}" Grid.Row="1" Grid.Column="1" Margin="10" HorizontalAlignment="Center" Width="350">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderThickness="2" BorderBrush="Black" Margin="5" CornerRadius="5">
@@ -92,7 +92,7 @@
         <!--</StackPanel>-->
         
         <!--Joke section-->
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Background="WhiteSmoke" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10">
+        <StackPanel Grid.Row="1" Grid.Column="2" Background="WhiteSmoke" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10">
             <StackPanel VerticalAlignment="Center">
                 <Label Content="Ron Swanson Says:" FontWeight="Bold"/>
             </StackPanel>
