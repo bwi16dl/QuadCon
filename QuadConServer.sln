@@ -50,6 +50,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerClient", "ServerClient\ServerClient.csproj", "{714A395A-656C-4EE6-87B1-940A44BB8C96}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RELEASES", "RELEASES", "{ABF46402-1B0B-412D-88CF-0A355F8ED968}"
+	ProjectSection(SolutionItems) = preProject
+		ClientInstaller\Release\QuadConDesktopClient.msi = ClientInstaller\Release\QuadConDesktopClient.msi
+		ServerInstaller\Release\QuadConServerSuite.msi = ServerInstaller\Release\QuadConServerSuite.msi
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
