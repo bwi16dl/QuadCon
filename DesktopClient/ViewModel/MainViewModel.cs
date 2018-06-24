@@ -70,6 +70,7 @@ namespace DesktopClient.ViewModel
             set { messages = value; }
         }
 
+
         public void ProcessMessage(PropertyChangedMessage<MessageItem> message)
         {
             MessageItem item = message.NewValue;

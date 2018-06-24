@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:DesktopClient.UserControls"
              mc:Ignorable="d"
              DataContext="{Binding Source={StaticResource Locator}, Path=Kodi}"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="350" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -22,7 +22,7 @@
 
 
 
-        <DataGrid Grid.Row="1" Grid.Column="0" AutoGenerateColumns="False" ItemsSource="{Binding Songs}" SelectedItem="{Binding SelectedSong, Mode=TwoWay}" Height="365" VerticalAlignment="Top" >
+        <DataGrid Grid.Row="1" Grid.Column="0" AutoGenerateColumns="False" ItemsSource="{Binding Songs}" SelectedItem="{Binding SelectedSong, Mode=TwoWay}" Height="285" VerticalAlignment="Top" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Key}" Width="0" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding Value}" Width="*"/>
@@ -34,7 +34,7 @@
             </Button.Effect>
         </Button>
 
-        <DataGrid Grid.Row="1" Grid.Column="1" AutoGenerateColumns="False" ItemsSource="{Binding Videos}" SelectedItem="{Binding SelectedVideo, Mode=TwoWay}" Height="365" VerticalAlignment="Top" >
+        <DataGrid Grid.Row="1" Grid.Column="1" AutoGenerateColumns="False" ItemsSource="{Binding Videos}" SelectedItem="{Binding SelectedVideo, Mode=TwoWay}" Height="285" VerticalAlignment="Top" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Key}" Width="0" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding Value}" Width="*"/>
@@ -42,7 +42,7 @@
         </DataGrid>
         <Button Content="Play Video" HorizontalAlignment="Left" Margin="69,12,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PlayVideo}" Height="20" Grid.Column="1" />
 
-        <DataGrid Grid.Row="1" Grid.Column="2" AutoGenerateColumns="False" ItemsSource="{Binding Photos}" SelectedItem="{Binding SelectedPhoto, Mode=TwoWay}" Height="365" VerticalAlignment="Top" >
+        <DataGrid Grid.Row="1" Grid.Column="2" AutoGenerateColumns="False" ItemsSource="{Binding Photos}" SelectedItem="{Binding SelectedPhoto, Mode=TwoWay}" Height="285" VerticalAlignment="Top" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Key}" Width="0" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding Value}" Width="*"/>
@@ -50,7 +50,7 @@
         </DataGrid>
         <Button Content="Play Photo" HorizontalAlignment="Left" Margin="69,12,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PlayPhoto}" Height="20" Grid.Column="2" />
 
-        <DataGrid Grid.Row="1" Grid.Column="3" AutoGenerateColumns="False" ItemsSource="{Binding Playlists}" SelectedItem="{Binding SelectedPlaylist, Mode=TwoWay}" Height="365" VerticalAlignment="Top" >
+        <DataGrid Grid.Row="1" Grid.Column="3" AutoGenerateColumns="False" ItemsSource="{Binding Playlists}" SelectedItem="{Binding SelectedPlaylist, Mode=TwoWay}" Height="285" VerticalAlignment="Top">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Key}" Width="0" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding Value}" Width="*"/>
