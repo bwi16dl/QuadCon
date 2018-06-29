@@ -17,9 +17,12 @@ namespace GenericInfo
         private string name;
         private Data.GenericInfo info;
         private HttpClient client;
+        //the url string to access the quote api
         private const string url = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
 
         #region GETTERS
+
+        //get the name of the service
         public string GetName() { return name; }
         public Data.GenericInfo GetInfo()
         {
@@ -28,6 +31,8 @@ namespace GenericInfo
         #endregion
 
         #region SETTERS
+
+        //shows the error in the controller
         public void SetName(string name)
         {
             this.name = name;
@@ -44,6 +49,8 @@ namespace GenericInfo
         }
         #endregion
 
+        /*
+        test code to testthe generic info source is sending data back to GUI
         private void StartUpdating()
         {
             Random random = new Random();
@@ -65,7 +72,9 @@ namespace GenericInfo
             };
 
         }
+        */
 
+        //retrieve a quote from the the API
         public string GetRonsQuote()
         {
             client = new HttpClient();
@@ -88,6 +97,7 @@ namespace GenericInfo
 
         }
 
+        //checking if a service is up
         public bool Isup()
         {
             return true;
@@ -96,8 +106,6 @@ namespace GenericInfo
         public GenericInfoSource()
         {
             SetName("Generic Info");
-            //SetInfo(new Data.GenericInfo() { SourceError="Source Unavailabe", Date = DateTime.Now.ToString(), SourceName="Weather"});
-            //new Thread(StartUpdating).Start();
         }
 
 

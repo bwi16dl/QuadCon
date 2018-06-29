@@ -51,7 +51,6 @@ namespace DesktopClient.ViewModel
         private void SendMessage(MessageItem message) { messenger.Send(new PropertyChangedMessage<MessageItem>(null, message, "")); }
         #endregion
 
-
         #region RELAYCOMMANDS
         public RelayCommand FullWeather { get => fullWeather; set => fullWeather = value; }
         public RelayCommand Forecast { get => forecast; set => forecast = value; }
