@@ -9,9 +9,13 @@ using Test;
 
 namespace Controller.Services
 {
+    // Straightforward implementation of ITestService
     [ServiceBehavior(AddressFilterMode = AddressFilterMode.Any)]
     public class TestService : ITestService
     {
+        // The basic logic utilises helper method Find() to find relevant object (by name) and then runs respective method on it
+        // NOTE that other web services have comparable implementation and, therefore, detailed explanation is only provided here
+
         public string GetName(string sourceName) { return TestObject.Find(sourceName).GetName(); }
         public TestData GetOneDay(string sourceName) { return TestObject.Find(sourceName).GetOneDay(); }
         public List<TestData> GetThreeDays(string sourceName) { return TestObject.Find(sourceName).GetThreeDays(); }

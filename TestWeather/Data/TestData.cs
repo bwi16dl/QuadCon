@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Test
 {
+    // A small object to demonstrate how client can work with OOP
+    // A forecast consists of one or three TestData objects, each one having temperature and wind
     [DataContract]
     public class TestData
     {

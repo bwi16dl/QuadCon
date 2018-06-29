@@ -39,7 +39,7 @@ namespace BusinessRules
 
             string attribute = source.GetType().GetMethod("AGet" + Attribute).Invoke(source, null).ToString();
             Comparators comparator = (Comparators)Enum.Parse(typeof(Comparators), Comparator.ToUpper());
-
+            
             if (comparator.Equals(Comparators.EQUALS)) { return attribute.Equals(Threshold); }
             else if (comparator.Equals(Comparators.MORE)) { try { return Double.Parse(attribute) > Double.Parse(Threshold); } catch (Exception) { Console.WriteLine("Cannot cast inputs"); return false; } }
             else if (comparator.Equals(Comparators.LESS)) { try { return Double.Parse(attribute) < Double.Parse(Threshold); } catch (Exception) { Console.WriteLine("Cannot cast inputs"); return false; } }

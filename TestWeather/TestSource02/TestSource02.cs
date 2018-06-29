@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Test
 {
+    // Same imnplementation as in TestSource01 - pls see comments there and in interface description
     public class TestClass02 : ITest
     {
         #region FIELDS
@@ -20,8 +21,8 @@ namespace Test
 
         #region GETTERS
         public string GetName() { return name; }
-        public int AGetCurrentTemperature() { return 10; }
-        public string AGetCurrentWind() { return "Weak"; }
+        public double AGetCurrentTemperature() { return oneDay.Temperature; }
+        public string AGetCurrentWind() { return oneDay.Wind; }
         public TestData GetOneDay() { return oneDay; }
         public List<TestData> GetThreeDays() { return threeDays; }
         #endregion

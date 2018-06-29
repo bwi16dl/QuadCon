@@ -10,6 +10,7 @@ using Weather;
 
 namespace Objects
 {
+    // Implementation is identical to TestObject, please see resp. comments there
     public static class KodiObject
     {
         public static List<IKodi> Connectors = new List<IKodi>();

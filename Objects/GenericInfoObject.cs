@@ -10,6 +10,7 @@ using Weather;
 
 namespace Objects
 {
+    // Implementation is identical to TestObject, please see resp. comments there
     public static class GenericInfoObject
     {
         public static List<IGenericInfo> Connectors = new List<IGenericInfo>();

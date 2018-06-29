@@ -14,21 +14,26 @@ namespace Test
     {
         #region FIELDS
         private string name;
-        private int currentTemperature;
-        private string currentWind;
         private TestData oneDay;
         private List<TestData> threeDays;
         #endregion
 
         #region GETTERS
+        // IMPORTANT!!!
+        // Note that the following two attributes were hardcoded here during on-campus demo!!! It was the root cause of an error
+        // User interface is bound to oneDay object. Admin getters are bound to these two attributes. Therefore when we have changed temperature in GUI, these attributes were not changed - hence no influence on business rule behavior
+        // CHANGED to query oneDay attributes, test OK
+        public double AGetCurrentTemperature() { return oneDay.Temperature; }
+        public string AGetCurrentWind() { return oneDay.Wind; }
+
+        // Methods starting with "AGet" are exposed to admin as attributes
         public string GetName() { return name; }
-        public int AGetCurrentTemperature() { return currentTemperature; }
-        public string AGetCurrentWind() { return currentWind; }
         public TestData GetOneDay() { return oneDay; }
         public List<TestData> GetThreeDays() { return threeDays; }
         #endregion
 
         #region SETTERS
+        // Methods starting with "A" are exposed to admin as actions
         public void SetName(string name) { this.name = name; }
         public void ASetOneDay(TestData oneDay) { this.oneDay = oneDay; }
         public void SetThreeDays(List<TestData> threeDays)
@@ -40,9 +45,11 @@ namespace Test
         #endregion
 
         #region ACTIONS
+        // Methods starting with "A" are exposed to admin as actions
         public void ATrigger(string printWhat) { Console.WriteLine(printWhat); }
         #endregion
 
+        // Simulation of changes initiated by a source (reshuffles 3-day weather forecast), should be visible in client
         private void StartUpdating()
         {
             Random random = new Random();
@@ -69,13 +76,10 @@ namespace Test
                 Thread.Sleep(10000);
             }
         }
-
+        
         public TestSource01()
         {
             SetName("Test Weather Source 01");
-
-            currentTemperature = 20;
-            currentWind = "Strong";
 
             ASetOneDay(new TestData() { Temperature = 12.5, Wind="Strong" });
             SetThreeDays(new List<TestData>());

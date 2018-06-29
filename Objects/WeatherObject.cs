@@ -10,6 +10,7 @@ using Weather;
 
 namespace Objects
 {
+    // Implementation is identical to TestObject, please see resp. comments there
     public static class WeatherObject
     {
         public static List<IWeather> Connectors = new List<IWeather>();
