@@ -26,7 +26,6 @@ namespace Weather.WeatherSource01
         public void SetName(string name)
         {
             this.name = name;
-            // Console.WriteLine("\n\t=> Name set: " + name);
         }
 
         //added newtonsoft json nuget stuff
@@ -36,7 +35,6 @@ namespace Weather.WeatherSource01
             countryy = country;
             string yahooWeatherQuery_current = "https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + city + "%2C%20" + country + "%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
             return CurrentWeather(yahooWeatherQuery_current);
-            //Julian: done
         }
 
         public string ForecastedWeather(string city, string country)
@@ -45,7 +43,6 @@ namespace Weather.WeatherSource01
             countryy = country;
             string yahooWeatherQuery_forecast = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + city + "%2C%20" + country + "%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
             return ForecastedWeather(yahooWeatherQuery_forecast);
-            //Julian: done
         }
 
         public string GetName()
@@ -59,7 +56,6 @@ namespace Weather.WeatherSource01
             countryy = country;
             string yahooWeatherQuery_wind = "https://query.yahooapis.com/v1/public/yql?q=select%20wind%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + city + "%2C%20" + country + "%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
             return GetWind(yahooWeatherQuery_wind);
-            //Julian: done
         }
 
         public string QueryWeather(string city, string country)
@@ -197,32 +193,6 @@ namespace Weather.WeatherSource01
                 return str.ToString();
                 #endregion
 
-                /*
-                //Obsolete??
-                //Log information
-                // TODO: Adapt for DB
-                #region Fileoutput
-                string path = @"c:\MyTest.txt"; //TODO: Input Server FilePath
-                //Initial creation text
-                if (!File.Exists(path))
-                {
-                    // Create a file to write to.
-                    using (StreamWriter sw = File.CreateText(path))
-                    {
-                        sw.WriteLine("Logging weather information:");
-                    }
-                }
-
-                // Append information of weather requests over time
-                using (StreamWriter sw = File.AppendText(path))
-                {
-                    sw.WriteLine("New weather request");
-                    sw.WriteLine("Request received at: " + created);
-                    sw.WriteLine("Current temperature: " + temp);
-                    sw.WriteLine("Current weather condition: " + text);
-                }
-                #endregion
-                */
             }
             catch (Exception error)
             {

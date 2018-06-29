@@ -69,6 +69,7 @@ namespace DesktopClient.ViewModel
         {
 
         #region INSTANTIATION
+        //the Generic Info service has timers which check services and update the specific services
         ErrorList = new ObservableCollection<Error>();
 
         messenger = SimpleIoc.Default.GetInstance<Messenger>();
@@ -76,16 +77,19 @@ namespace DesktopClient.ViewModel
         KodiService = true;
         WeatherService = true;
         GenericService = true;
-
+        
+            //timer to check if ALL services are up
         checkServices = new DispatcherTimer();
         checkServices.Interval = new TimeSpan(0, 0, 5);
         checkServices.Tick += new EventHandler(PollServices);
 
+            //get the quote from the API
         getRonQuote = new DispatcherTimer();
         getRonQuote.Start();
         getRonQuote.Interval = new TimeSpan(0, 1, 0);
         getRonQuote.Tick += new EventHandler(getQuote);
 
+            //timer to check if the Generic info service is up
         isup = new DispatcherTimer();
         isup.Start();
         isup.Interval = new TimeSpan(0, 0, 5);

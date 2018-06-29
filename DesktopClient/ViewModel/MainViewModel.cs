@@ -84,7 +84,7 @@ namespace DesktopClient.ViewModel
 
         public MainViewModel()
         {
-
+            //clock timer to update the clock
             clockTimer = new DispatcherTimer();
             clockTimer.Start();
             clockTimer.Interval = new TimeSpan(0, 0, 5);
