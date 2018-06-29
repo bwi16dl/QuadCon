@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 
 namespace BusinessRules.DataCollector
 {
+    // A class that collects all exposed information from loaded sources
+    // It is part of data contract, since everything is transferred to client as one big object
     [DataContract]
     public static class Collector
     {
@@ -18,6 +20,7 @@ namespace BusinessRules.DataCollector
         public static List<ExposedData> GetExposedData() { return ExposedData; }
 
         #region INTERNAL
+        // Main logic to loop through all sources
         public static void Collect()
         {
             ExposedData = new List<ExposedData>();
@@ -28,6 +31,7 @@ namespace BusinessRules.DataCollector
             foreach (var i in WeatherObject.Connectors) { ExposedData.Add(CreateConstructor(i)); }
         }
 
+        // Logic to process each source and collect exposed attributes and methods
         private static ExposedData CreateConstructor(Object from)
         {
             string source = from.GetType().GetMethod("GetName").Invoke(from, null).ToString();

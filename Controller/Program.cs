@@ -52,8 +52,8 @@ namespace Controller
             BusinessRules.DataCollector.Collector.Collect();
 
             // Just some hosting of web services
-            // Note that there is a separate web service exposed for each source
-            // (was done to reduce code complexity, provide type safety and comply to required architecture)
+            // There is a separate web service exposed for each source (was done to reduce code complexity, provide type safety and comply to required architecture)
+            // Note that web services are added to this project, since they are registered in static classes, which are not visible from other projects
             Console.WriteLine("\tHosting web services...");
             new ServiceHost(typeof(TestService)).Open();
             new ServiceHost(typeof(KodiService)).Open();

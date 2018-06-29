@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace BusinessRules.DataCollector
 {
+    // Data object that represents a source, its attributes and methods exposed for admin purposes
+    // Everything is implemented as list of strings due to reflections (type safety is provided on client side, by exposing the queried attributes and methods in dropdown boxes to choose from)
     [DataContract]
     public class ExposedData
     {

@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 
 namespace RuleObjects.DB
 {
+    // A class that handles DB functionality
     public class DBHandler
     {
+        // Data model
         public BusinessRulesModel db = new BusinessRulesModel();
 
+        // Helper method to add a new business rule. Consists of 3 parts:
+        // 1. Checks if the rule already exists in DB
+        // 2. Adds a rule
+        // 3. Queries rule ID and registers it in the rule object
         public int AddBusinessRule(Rule rule)
         {
             int exists = (from i in db.BusinessRules where i.Id == rule.Id select i).Count();
@@ -28,6 +34,10 @@ namespace RuleObjects.DB
             catch (Exception e) { Console.WriteLine("Cannot add business rule or trigger: " + e); return 0; }
         }
 
+        // Helper method to remove business rule from DB. Consists of 3 parts:
+        // 1. Checks if the rule exists in DB
+        // 2. Removes the rule
+        // 3. Cleans up the triggers, should they be present
         public bool RemoveBusinessRule(Rule rule)
         {
             BusinessRule toRemove;
@@ -46,6 +56,7 @@ namespace RuleObjects.DB
             } catch (Exception e) { Console.WriteLine("Cannot remove busines rule or trigger: " + e); return false; }
         }
 
+        // Helper method to query all business rules and triggers from DB
         public List<Rule> GetBusinessRules()
         {
             List<Rule> rules = new List<Rule>();
