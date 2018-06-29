@@ -18,20 +18,19 @@ namespace Kodi
             this.url = @"http://localhost:8080";
         }
 
-        #region FIELDS
         private string url = @"http://localhost:8080";
         private string name;
-        private IDictionary<int, string> songs;
-        #endregion
-
-        #region GETTERS
+        //private IDictionary<int, string> songs;
+       
         public string GetName()
         {
             return this.name;
         }
 
+        // Returns dictionary of song names and songids 
         public IDictionary<int, string> GetSongs()
         {
+            // return null if kodi is not pingable
             if (!Ping()) { return null; }
 
             string html = HttpGet(url + "/jsonrpc?request={%22jsonrpc%22:%222.0%22,%22id%22:1,%22method%22:%22AudioLibrary.GetSongs%22,%22params%22:{}}");
@@ -47,13 +46,19 @@ namespace Kodi
             }
             catch (Exception) { return null; }
         }
+
+        // Returns dictionary of picture names and picture paths
         public IDictionary<string, string> GetPictures()
         {
+            // return null if kodi is not pingable
             if (!Ping()) { return null; }
 
+            // Get list of directories where the Kodi pictures are stored
             string html = HttpGet(url + "/jsonrpc?request={%22jsonrpc%22:%222.0%22,%22id%22:1,%22method%22:%22Files.GetSources%22,%22params%22:{%22media%22:%22pictures%22}}");
             //http://localhost:8080/jsonrpc?request={%22jsonrpc%22:%222.0%22,%22id%22:1,%22method%22:%22Files.GetSources%22,%22params%22:{%22media%22:%22pictures%22}}
 
+
+            // Recursively look through the directories for picture files
             void subdirCheck(string dir, ref IDictionary<string, string> results2)
             {
                 string html2 = HttpGet(url + "/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"Files.GetDirectory\",\"params\":{\"directory\":\"" + dir.Replace("\\", "/") + "\",\"media\":\"pictures\"}}").Replace("\\\\\\", "\\");
@@ -108,6 +113,8 @@ namespace Kodi
             catch (Exception) { return null; }
 
         }
+
+        // return list of movie names and movie ids
         public IDictionary<int, string> GetMovies()
         {
             if (!Ping()) { return null; }
@@ -131,6 +138,8 @@ namespace Kodi
 
         }
 
+
+        // return list of playlist names and playlist "special" paths
         public IDictionary<string, string> GetPlaylists()
         {
             if (!Ping()) { return null; }
@@ -150,23 +159,25 @@ namespace Kodi
             catch (Exception) { return null; }
         }
 
-        #endregion
+       
 
-        #region SETTERS
+
         public void SetName(string name)
         {
             this.name = name;
             //Console.WriteLine("\n\t=> Name set: " + name);
-            songs = GetSongs();
+            //songs = GetSongs();
             //Console.WriteLine("\n\t=> Songs: " + name);
 
         }
-        #endregion
+      
 
         public void SetUrl(string url)
         {
             this.url = url;
         }
+
+        // play song on kodi given songid 
         public void PlaySong(int songId)
         {
             if (!Ping()) { return; }
@@ -175,6 +186,7 @@ namespace Kodi
             HttpGet(url + "/jsonrpc?request=%7B%22jsonrpc%22%3A%20%222.0%22%2C%20%22id%22%3A%202%2C%20%22method%22%3A%20%22Player.Open%22%2C%20%22params%22%3A%20%7B%22item%22%3A%20%7B%22playlistid%22%3A%200%7D%7D%7D");
         }
 
+        // play movie on kodi given movieid
         public void PlayMovie(int movieId)
         {
             if (!Ping()) { return; }
@@ -184,7 +196,7 @@ namespace Kodi
             HttpGet(url + "/jsonrpc?request=%7B%22jsonrpc%22%3A%20%222.0%22%2C%20%22id%22%3A%202%2C%20%22method%22%3A%20%22Player.Open%22%2C%20%22params%22%3A%20%7B%22item%22%3A%20%7B%22movieid%22%3A%20" + movieId + "%7D%7D%7D");
         }
 
-
+        // play/pause the current player
         public void PlayPause()
         {
             if (!Ping()) { return; }
@@ -193,12 +205,15 @@ namespace Kodi
             //[{"jsonrpc":"2.0","method":"Player.PlayPause","params":[1,"toggle"],"id":13}]
         }
 
+        // change the volume of the kodi player, accepted values are 0-100
         public void ChangeVolume(int volume)
         {
             if (!Ping()) { return; }
             HttpGet(url + "/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"Application.SetVolume\",\"params\":{\"volume\":" + volume + "}}");
             ///jsonrpc?request={"jsonrpc":"2.0","id":1,"method":"Application.SetVolume","params":{"volume":100}}
         }
+
+        // display picture on kodi given the picture path
         public void PlayPicture(string pictureId)
         {
             if (!Ping()) { return; }
@@ -207,6 +222,8 @@ namespace Kodi
             //{"jsonrpc":"2.0","id":"1","method":"Player.Open","params":{"item":{"file":"D:\Pictures\Wallapapers\anton-fadeev-image.jpg"}}}
         }
 
+
+        // pings the kodi server and return true if the server is accessible and false if not
         private bool Ping()
         {
             try
@@ -222,6 +239,7 @@ namespace Kodi
 
         }
 
+        // play playlist on kodie give the playlist special path
         public void PlayPlaylist(string playlistId)
         {
             if (!Ping()) { return; }
@@ -232,9 +250,12 @@ namespace Kodi
             //[{"jsonrpc":"2.0","method":"Playlist.Insert","params":[0,0,{"directory":"special://profile/playlists/music/CustomPlaylist.m3u"}],"id":682}]
             //[{"jsonrpc":"2.0","method":"Player.Open","params":{"item":{"position":0,"playlistid":0},"options":{}},"id":814}]
         }
+        
+        // Helper Functions
+        
         /*
-        * Helper Functions
-        */
+         * Given a url, return the response html as a string
+         */
         private static string HttpGet(string url)
         {
             string html = "";
